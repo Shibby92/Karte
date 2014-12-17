@@ -1,7 +1,7 @@
 public class Card {
 	private int number;
 	private int value;
-	private String znak;
+	private String sign;
 
 	public Card(int number) {
 			
@@ -16,23 +16,18 @@ public class Card {
 				
 			switch (number/13) {
 			case 0:
-				this.znak = "\u2665";
+				this.sign = "\u2665";
 				break;
 			case 1:
-				this.znak = "\u2660";
+				this.sign = "\u2660";
 				break;
 			case 2:
-				this.znak = "\u2666";
+				this.sign = "\u2666";
 				break;
 			case 3:
-				this.znak = "\u2663";
+				this.sign = "\u2663";
 				break;
 			}
-		if (number == 1)
-			this.value = 11;
-		this.value=number;
-		if(this.value>10)
-			this.value=10;
 		if(this.number>=11)
 			this.number++;
 	}
@@ -44,12 +39,12 @@ public class Card {
 	public String toString() {
 		String out = "";
 
-		out += number + " " + znak;
+		out += this.number + " " + this.sign;
 		return out;
 	}
 	public Card(Card other){
 		this.number=other.number;
 		this.value=other.value;
-		this.znak=other.znak;
+		this.sign=other.sign;
 	}
 }

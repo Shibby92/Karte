@@ -2,16 +2,10 @@ public class CardTest {
 
 	public static void main(String[] args) {
 		Deck first = new Deck();
-		for (int i = 0; i < 52; i++) {
-			System.out.println(first.getCards()[i]);
+		System.out.println(first.toString());
+		Hand player = new Hand();
+		Hand dealer= new Hand();
+		dealer.ai(first,player.play(first));
+		player.winner(dealer);
 		}
-		System.out.println();
-		first.Shuffle();
-		for (int i = 0; i < 52; i++) {
-			System.out.println(first.getCards()[i]);
-		}
-System.out.println(first.getNext().toString());
-
-	}
-
 }

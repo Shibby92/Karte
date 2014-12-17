@@ -7,6 +7,7 @@ public class Deck {
 			cards[i] = new Card(i);
 
 		}
+		shuffle();
 	}
 
 	public Card[] getCards() {
@@ -17,7 +18,7 @@ public class Deck {
 		this.cards = cards;
 	}
 
-	public void Shuffle() {
+	public void shuffle() {
 		int counter = 0;
 		Card tmp = new Card(1);
 		while (counter < 100) {
@@ -36,5 +37,14 @@ public class Deck {
 	}
 public Card getNext(){
 	return cards[counter++];
+}
+public String toString(){
+	String out="";
+	for (int i = 0; i < 52; i++) {
+		out+=getCards()[i] + "   "
+				+ getCards()[i].getValue()+"\n";
+	}
+	out+="\n";
+	return out;
 }
 }
