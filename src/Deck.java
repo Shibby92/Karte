@@ -39,12 +39,14 @@ public Card getNext(){
 	return cards[counter++];
 }
 public String toString(){
-	String out="";
+	StringBuilder sb=new StringBuilder();
 	for (int i = 0; i < 52; i++) {
-		out+=getCards()[i] + "   "
-				+ getCards()[i].getValue()+"\n";
+		sb.append(getCards()[i]);
+		sb.append("   ") ;
+		sb.append(getCards()[i].getValue());
+		sb.append("\n");
 	}
-	out+="\n";
-	return out;
+	sb.append("\n");
+	return sb.toString();
 }
 }
